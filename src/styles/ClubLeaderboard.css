@@ -1,0 +1,12 @@
+#club-leaderboard-body{
+    height: 100%;
+    align-items: center;
+    border-bottom: 2px solid #F05742; 
+}
+
+#club-leaderboard-header{
+    color: #F05742;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 5%;
+}

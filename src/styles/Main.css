@@ -1,0 +1,22 @@
+body{
+    background-color: black;
+    color: white
+}
+#nav-container{
+    height: 10vh;
+    background-color: red;
+}
+
+#home{
+    height: 100vh;
+}
+
+#club-leaderboard{
+    height: 100vh;
+}
+
+#find-match{
+    height: 100vh;
+}
+
+
