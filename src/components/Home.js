@@ -1,56 +1,21 @@
 import React from "react";
 import "../styles/Home.css";
+import avatarHome from "../assets/avatar-home.png";
 
 function Home() {
   return (
     <div id="home-body">
       <h1 id="home-header">HOME</h1>
-      This is the Home section forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsf
-      forsofuorhfursofsdrofosdfosdoifdsofjdsj
-      ifjsdfijsdfjsdfjsdjifsdoifjsdoifjosdifjoidsfs
+      <div id="home-content">
+        <h2 id="home-content-title">What is ClubHub?</h2>
+        <p id="home-content-body">
+          ClubHub is an application made for FIFA Pro Club players across all
+          platforms. Our objective is to provide clubs with the resources to
+          setup custom matches against other clubs in their skill range and also
+          provide an accurate assessment of a clubs true skill rating.
+        </p>
+        <img src={avatarHome} alt="Avatar home" height={350} width={250} />
+      </div>
     </div>
   );
 }

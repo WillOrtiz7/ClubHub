@@ -17,6 +17,11 @@
 #nav-links > div {
     margin-right: 10%;
     display: inline-block;
+    cursor: pointer;
+}
+
+#nav-links > div:hover {
+    color:#F05742;
 }
 
 
