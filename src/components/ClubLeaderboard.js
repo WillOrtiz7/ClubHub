@@ -1,14 +1,14 @@
 import React from "react";
 import "../styles/ClubLeaderboard.css";
 import avatarClubLeaderboard from "../assets/avatar-club-leaderboard.png";
-import CollapsibleTable from "./CollapsibleTable";
+import StickyHeadTable from "./CollapsibleTable";
 
 function ClubLeaderboard() {
   return (
     <div id="club-leaderboard-body">
       <h1 id="club-leaderboard-header">Club Leaderboard</h1>
       <div id="club-leaderboard-content">
-        <CollapsibleTable />
+        <StickyHeadTable />
         <img
           id="club-leaderboard-avatar"
           src={avatarClubLeaderboard}
