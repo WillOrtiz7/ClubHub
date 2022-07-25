@@ -20,35 +20,36 @@ function PlatformCarousel() {
           "black";
       }
     }
-    document.getElementById(platform).style.backgroundColor = "#F05742";
+    document.getElementById(leaderboardPlatform).style.backgroundColor =
+      "#F05742";
   }
 
   const [leaderboardPlatform, setLeaderboardPlatform] =
     useState("leaderboard-xbox");
   useEffect(() => {
     handlePlatformSelect(leaderboardPlatform);
-  }, []);
+  }, [leaderboardPlatform]);
 
   return (
     <div id="platform-carousel-container">
       <div
         class="platform-icon"
         id="leaderboard-xbox"
-        onClick={() => handlePlatformSelect("leaderboard-xbox")}
+        onClick={() => setLeaderboardPlatform("leaderboard-xbox")}
       >
         <img src={iconXbox} alt="iconXbox" height={100} width={100} />
       </div>
       <div
         class="platform-icon"
         id="leaderboard-pc"
-        onClick={() => handlePlatformSelect("leaderboard-pc")}
+        onClick={() => setLeaderboardPlatform("leaderboard-pc")}
       >
         <img src={iconPc} alt="iconPc" height={100} width={100} />
       </div>
       <div
         class="platform-icon"
         id="leaderboard-playstation"
-        onClick={() => handlePlatformSelect("leaderboard-playstation")}
+        onClick={() => setLeaderboardPlatform("leaderboard-playstation")}
       >
         <img
           src={iconPlaystation}
