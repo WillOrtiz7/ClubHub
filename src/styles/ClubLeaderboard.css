@@ -15,6 +15,29 @@
 }
 
 #club-leaderboard-content{
-    margin-left: 25%;
+    white-space: nowrap;
     width: 50%;
 }
+
+#club-leaderboard-avatar{
+    display: inline-block;
+}
+
+#club-leaderboard-table{
+    display: inline-block;
+}
+
+#platform-carousel-container{
+    white-space: nowrap;
+  }
+  
+.platform-icon{
+    display: inline-block;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    margin-right: 1%;
+  }
+
+  .platform-icon:hover{
+    cursor: pointer;
+  }

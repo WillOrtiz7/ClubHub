@@ -52,7 +52,7 @@ const rows = [
 
 export default function StickyHeadTable() {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -86,7 +86,7 @@ export default function StickyHeadTable() {
                     color: "white",
                     backgroundColor: "black",
                     borderBottom: "1px solid #F05742",
-                    fontSize: 16,
+                    fontSize: 12,
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "bold",
                   }}
@@ -111,7 +111,7 @@ export default function StickyHeadTable() {
                           sx={{
                             color: "white",
                             borderBottom: "1px solid #F05724",
-                            fontSize: 14,
+                            fontSize: 10,
                             fontFamily: "Poppins, sans-serif",
                             fontWeight: "bold",
                           }}

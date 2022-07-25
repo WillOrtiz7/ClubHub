@@ -1,6 +1,7 @@
 #nav{
     height: 100%;
     display: flex;
+    font-size: 18px;
     background-color: black;
     align-items: center;
     justify-content: flex-end;

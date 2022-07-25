@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/FindMatch.css";
+import StickyHeadTable from "./CollapsibleTable";
 import avatarFindMatch from "../assets/avatar-find-match.png";
 
 function FindMatch() {
@@ -7,7 +8,6 @@ function FindMatch() {
     <div id="find-match-body">
       <h1 id="find-match-header">Find a Match</h1>
       <div id="find-match-content">
-        <p>Search for a match here</p>
         <img
           id="find-match-avatar"
           src={avatarFindMatch}
@@ -15,6 +15,9 @@ function FindMatch() {
           height={350}
           width={250}
         />
+        <div id="find-match-table">
+          <StickyHeadTable />
+        </div>
       </div>
     </div>
   );
