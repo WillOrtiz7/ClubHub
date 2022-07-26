@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/FindMatch.css";
-import StickyHeadTable from "./CollapsibleTable";
+import StickyHeadTable from "./StickyHeadTable";
 import avatarFindMatch from "../assets/avatar-find-match.png";
 
 function FindMatch() {

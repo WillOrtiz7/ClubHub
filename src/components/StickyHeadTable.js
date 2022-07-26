@@ -7,6 +7,8 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
+import { useEffect } from "react";
+import { getCircularProgressUtilityClass } from "@mui/material";
 
 const columns = [
   { id: "name", label: "Rank", minWidth: 170 },
@@ -32,7 +34,7 @@ function createData(name, code, population, size) {
   return { name, code, population, size, density };
 }
 
-const rows = [
+const pcRows = [
   createData("1", "ColomBraZealand", "22-1", 2302),
   createData("2", "Sidemen FC", "39-7", 2289),
   createData("3", "Inter Your Nan", "20-2", 2251),
@@ -40,19 +42,49 @@ const rows = [
   createData("5", "Goby the Savior", "18-4", 2201),
   createData("6", "Crister Ronaldo", "39-10", 2187),
   createData("7", "Bald Fraud FC", "11-1", 2105),
-  createData("8", "IE", 4857000, 70273),
-  createData("9", "MX", 126577691, 1972550),
-  createData("10", "JP", 126317000, 377973),
-  createData("11", "FR", 67022000, 640679),
-  createData("12", "GB", 67545757, 242495),
-  createData("13", "RU", 146793744, 17098246),
-  createData("14", "NG", 200962417, 923768),
-  createData("15", "BR", 210147125, 8515767),
+];
+const xboxRows = [
+  createData("1", "XBOX", "26-2", 2291),
+  createData("2", "XBOX", "32-4", 2289),
+  createData("3", "Inter Your Nan", "18-2", 2210),
+  createData("4", "Valderrama FC", "40-7", 2201),
+  createData("5", "Goby the Savior", "20-6", 2175),
+  createData("6", "Crister Ronaldo", "29-8", 2166),
+  createData("7", "Bald Fraud FC", "13-2", 2100),
+];
+const playstationRows = [
+  createData("1", "PS5", "22-1", 2302),
+  createData("2", "Sidemen FC", "39-7", 2289),
+  createData("3", "Inter Your Nan", "20-2", 2251),
+  createData("4", "Valderrama FC", "35-6", 2240),
+  createData("5", "Goby the Savior", "18-4", 2201),
+  createData("6", "Crister Ronaldo", "39-10", 2187),
+  createData("7", "Bald Fraud FC", "11-1", 2105),
 ];
 
-export default function StickyHeadTable() {
+let rows = [
+  createData("1", "Default", "22-1", 2302),
+  createData("2", "Sidemen FC", "39-7", 2289),
+  createData("3", "Inter Your Nan", "20-2", 2251),
+  createData("4", "Valderrama FC", "35-6", 2240),
+  createData("5", "Goby the Savior", "18-4", 2201),
+  createData("6", "Crister Ronaldo", "39-10", 2187),
+  createData("7", "Bald Fraud FC", "11-1", 2105),
+];
+
+export default function StickyHeadTable(props) {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(5);
+  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const platform = props.platform;
+
+  rows =
+    platform === "leaderboard-xbox"
+      ? xboxRows
+      : platform === "leaderboard-pc"
+      ? pcRows
+      : rows;
+
+  console.log("props.platform: ", props.platform);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
