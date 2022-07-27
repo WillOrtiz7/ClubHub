@@ -7,21 +7,19 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
-import { useEffect } from "react";
-import { getCircularProgressUtilityClass } from "@mui/material";
 
 const columns = [
-  { id: "name", label: "Rank", minWidth: 170 },
-  { id: "code", label: "Club", minWidth: 100 },
+  { id: "rank", label: "Rank", minWidth: 170 },
+  { id: "clubName", label: "Club", minWidth: 100 },
   {
-    id: "population",
+    id: "record",
     label: "Record",
     minWidth: 170,
     align: "right",
     format: (value) => value.toLocaleString("en-US"),
   },
   {
-    id: "size",
+    id: "elo",
     label: "ELO",
     minWidth: 170,
     align: "right",
@@ -29,9 +27,8 @@ const columns = [
   },
 ];
 
-function createData(name, code, population, size) {
-  const density = population / size;
-  return { name, code, population, size, density };
+function createData(rank, clubName, record, elo) {
+  return { rank, clubName, record, elo };
 }
 
 const pcRows = [
@@ -45,7 +42,7 @@ const pcRows = [
 ];
 const xboxRows = [
   createData("1", "XBOX", "26-2", 2291),
-  createData("2", "XBOX", "32-4", 2289),
+  createData("2", "Deez", "32-4", 2289),
   createData("3", "Inter Your Nan", "18-2", 2210),
   createData("4", "Valderrama FC", "40-7", 2201),
   createData("5", "Goby the Savior", "20-6", 2175),
@@ -62,19 +59,11 @@ const playstationRows = [
   createData("7", "Bald Fraud FC", "11-1", 2105),
 ];
 
-let rows = [
-  createData("1", "Default", "22-1", 2302),
-  createData("2", "Sidemen FC", "39-7", 2289),
-  createData("3", "Inter Your Nan", "20-2", 2251),
-  createData("4", "Valderrama FC", "35-6", 2240),
-  createData("5", "Goby the Savior", "18-4", 2201),
-  createData("6", "Crister Ronaldo", "39-10", 2187),
-  createData("7", "Bald Fraud FC", "11-1", 2105),
-];
+let rows = [];
 
 export default function StickyHeadTable(props) {
   const [page, setPage] = React.useState(0);
-  const [rowsPerPage, setRowsPerPage] = React.useState(10);
+  const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const platform = props.platform;
 
   rows =
@@ -82,9 +71,12 @@ export default function StickyHeadTable(props) {
       ? xboxRows
       : platform === "leaderboard-pc"
       ? pcRows
+      : platform === "leaderboard-playstation"
+      ? playstationRows
       : rows;
 
   console.log("props.platform: ", props.platform);
+  console.log("rows: ", rows);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -100,7 +92,7 @@ export default function StickyHeadTable(props) {
       sx={{
         width: "100%",
         overflow: "hidden",
-        border: "1px solid #F05742",
+        border: "1px solid gray",
         backgroundColor: "black",
         fontFamily: "Poppins, sans-serif",
       }}
@@ -116,8 +108,8 @@ export default function StickyHeadTable(props) {
                   sx={{
                     minWidth: column.minWidth,
                     color: "white",
-                    backgroundColor: "black",
-                    borderBottom: "1px solid #F05742",
+                    backgroundColor: "#F05742",
+                    borderBottom: "1px solid gray",
                     fontSize: 12,
                     fontFamily: "Poppins, sans-serif",
                     fontWeight: "bold",
@@ -133,7 +125,12 @@ export default function StickyHeadTable(props) {
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map((row) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow
+                    hover
+                    role="checkbox"
+                    tabIndex={-1}
+                    key={row.clubName}
+                  >
                     {columns.map((column) => {
                       const value = row[column.id];
                       return (
@@ -142,7 +139,7 @@ export default function StickyHeadTable(props) {
                           align={column.align}
                           sx={{
                             color: "white",
-                            borderBottom: "1px solid #F05724",
+                            borderBottom: "1px solid gray",
                             fontSize: 10,
                             fontFamily: "Poppins, sans-serif",
                             fontWeight: "bold",
