@@ -31,7 +31,7 @@ function createData(rank, clubName, record, elo) {
   return { rank, clubName, record, elo };
 }
 
-const pcRows = [
+const pcRowsLeaderboard = [
   createData("1", "ColomBraZealand", "22-1", 2302),
   createData("2", "Sidemen FC", "39-7", 2289),
   createData("3", "Inter Your Nan", "20-2", 2251),
@@ -40,7 +40,7 @@ const pcRows = [
   createData("6", "Crister Ronaldo", "39-10", 2187),
   createData("7", "Bald Fraud FC", "11-1", 2105),
 ];
-const xboxRows = [
+const xboxRowsLeaderboard = [
   createData("1", "XBOX", "26-2", 2291),
   createData("2", "Deez", "32-4", 2289),
   createData("3", "Inter Your Nan", "18-2", 2210),
@@ -49,8 +49,35 @@ const xboxRows = [
   createData("6", "Crister Ronaldo", "29-8", 2166),
   createData("7", "Bald Fraud FC", "13-2", 2100),
 ];
-const playstationRows = [
+const playstationRowsLeaderboard = [
   createData("1", "PS5", "22-1", 2302),
+  createData("2", "Sidemen FC", "39-7", 2289),
+  createData("3", "Inter Your Nan", "20-2", 2251),
+  createData("4", "Valderrama FC", "35-6", 2240),
+  createData("5", "Goby the Savior", "18-4", 2201),
+  createData("6", "Crister Ronaldo", "39-10", 2187),
+  createData("7", "Bald Fraud FC", "11-1", 2105),
+];
+const xboxRowsFindMatch = [
+  createData("1", "Find a match xbox", "22-1", 2302),
+  createData("2", "Sidemen FC", "39-7", 2289),
+  createData("3", "Inter Your Nan", "20-2", 2251),
+  createData("4", "Valderrama FC", "35-6", 2240),
+  createData("5", "Goby the Savior", "18-4", 2201),
+  createData("6", "Crister Ronaldo", "39-10", 2187),
+  createData("7", "Bald Fraud FC", "11-1", 2105),
+];
+const pcRowsFindMatch = [
+  createData("1", "Find a match pc", "22-1", 2302),
+  createData("2", "Sidemen FC", "39-7", 2289),
+  createData("3", "Inter Your Nan", "20-2", 2251),
+  createData("4", "Valderrama FC", "35-6", 2240),
+  createData("5", "Goby the Savior", "18-4", 2201),
+  createData("6", "Crister Ronaldo", "39-10", 2187),
+  createData("7", "Bald Fraud FC", "11-1", 2105),
+];
+const playstationRowsFindMatch = [
+  createData("1", "Find a match PS", "22-1", 2302),
   createData("2", "Sidemen FC", "39-7", 2289),
   createData("3", "Inter Your Nan", "20-2", 2251),
   createData("4", "Valderrama FC", "35-6", 2240),
@@ -66,17 +93,21 @@ export default function StickyHeadTable(props) {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const platform = props.platform;
 
+  // Set rows for both components
   rows =
     platform === "leaderboard-xbox"
-      ? xboxRows
+      ? xboxRowsLeaderboard
       : platform === "leaderboard-pc"
-      ? pcRows
+      ? pcRowsLeaderboard
       : platform === "leaderboard-playstation"
-      ? playstationRows
+      ? playstationRowsLeaderboard
+      : platform === "find-match-xbox"
+      ? xboxRowsFindMatch
+      : platform === "find-match-pc"
+      ? pcRowsFindMatch
+      : platform === "find-match-playstation"
+      ? playstationRowsFindMatch
       : rows;
-
-  console.log("props.platform: ", props.platform);
-  console.log("rows: ", rows);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
