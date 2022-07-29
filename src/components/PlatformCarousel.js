@@ -93,7 +93,7 @@ function PlatformCarousel(props) {
           <img src={iconXbox} alt="iconXbox" height={100} width={100} />
         </div>
         <div
-          class="platform-icon"
+          className="platform-icon"
           id={pcIcon}
           onClick={
             root === "leaderboard"
@@ -104,7 +104,7 @@ function PlatformCarousel(props) {
           <img src={iconPc} alt="iconPc" height={100} width={100} />
         </div>
         <div
-          class="platform-icon"
+          className="platform-icon"
           id={playstationIcon}
           onClick={
             root === "leaderboard"
@@ -129,7 +129,7 @@ function PlatformCarousel(props) {
           width={250}
         />
         <div id="club-leaderboard-table">
-          <StickyHeadTable platform={tableRender} />
+          <StickyHeadTable platform={tableRender} root={root} />
         </div>
       </div>
     </div>

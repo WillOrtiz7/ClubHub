@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 #find-match-body{
     height: 100%;
     min-height: 100vh;
@@ -23,4 +25,41 @@
 
 #find-match-table{
     display: inline-block;
+}
+
+.join-match-button{
+    font-family: "Poppins", "sans-serif";
+    color: white;
+    margin-left: 60%;
+    background-color: #F05742;
+    border-radius: 10px;
+}
+
+.join-match-button:hover{
+    cursor: pointer;
+    color:black;
+    background-color: white;
+}
+
+.leave-match-container{
+    white-space: nowrap;
+}
+
+.find-match-opponent-team-name{
+    margin-left: 65%;
+    display: inline-block;
+}
+
+.leave-match-button{
+    font-family: "Poppins", "sans-serif";
+    color: white;
+    margin-left: 25%;
+    background-color: #F05742;
+    border-radius: 10px;
+}
+
+.leave-match-button:hover{
+    cursor: pointer;
+    color:black;
+    background-color: white;
 }
