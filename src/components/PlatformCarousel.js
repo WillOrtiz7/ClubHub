@@ -6,6 +6,7 @@ import iconXbox from "../assets/icon-xbox.png";
 import avatarClubLeaderboard from "../assets/avatar-club-leaderboard.png";
 import avatarFindMatch from "../assets/avatar-find-match.png";
 import StickyHeadTable from "./StickyHeadTable";
+import CreateMatch from "./CreateMatch";
 
 let leaderboardPlatformList = [
   "leaderboard-xbox",
@@ -62,6 +63,7 @@ function PlatformCarousel(props) {
   const [leaderboardPlatform, setLeaderboardPlatform] =
     useState("leaderboard-xbox");
   const [findMatchPlatform, setFindMatchPlatform] = useState("find-match-xbox");
+  const [createMatchOpen, setCreateMatchOpen] = useState(false);
 
   // Re-render component when new platform is selected
   useEffect(() => {
@@ -71,7 +73,7 @@ function PlatformCarousel(props) {
     } else {
       handleFindMatchPlatformSelect();
     }
-  }, [leaderboardPlatform, findMatchPlatform]);
+  }, [leaderboardPlatform, findMatchPlatform, createMatchOpen]);
 
   // Decide leaderboard to display when StickyHeadTable is called
   let tableRender =
@@ -129,9 +131,25 @@ function PlatformCarousel(props) {
           width={250}
         />
         <div id="club-leaderboard-table">
-          <StickyHeadTable platform={tableRender} root={root} />
+          {createMatchOpen ? (
+            <CreateMatch />
+          ) : (
+            <StickyHeadTable platform={tableRender} root={root} />
+          )}
         </div>
       </div>
+      {root === "findMatch" ? (
+        <div className="create-match-container">
+          <button
+            className="create-match-button"
+            onClick={() => setCreateMatchOpen(!createMatchOpen)}
+          >
+            Create match
+          </button>
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
