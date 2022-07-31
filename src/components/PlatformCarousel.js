@@ -123,13 +123,6 @@ function PlatformCarousel(props) {
         </div>
       </div>
       <div id="club-leaderboard-content">
-        <img
-          id="club-leaderboard-avatar"
-          src={avatar}
-          alt="Avatar club leaderboard"
-          height={350}
-          width={250}
-        />
         <div id="club-leaderboard-table">
           {createMatchOpen ? (
             <CreateMatch />

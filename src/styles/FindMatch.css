@@ -65,8 +65,9 @@
 }
 
 .create-match-container{
-    width: 100%;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .create-match-button{
@@ -84,6 +85,19 @@
     background-color: white;
 }
 
+
+/****************************************
+*****************************************
+    DATE TIME PICKER 
+    *************************************
+    *************************************/
+
+    .date-time-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 /* label text */
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root{
     color: white !important;
@@ -109,11 +123,11 @@
 }
 
 /* calendar background and header text */
-.css-1tihz4g-MuiPaper-root{
+.css-1smlk3z-MuiPaper-root{
     background-color: black !important;
     color: white !important;
     border: 1px solid gray;
-    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 /* calendar days */
@@ -217,4 +231,30 @@
 .css-2ujp1m{
     border: 16px solid #F05742 !important;
     background-color: #F05742 !important;
+}
+
+/****************************************
+*****************************************
+    DATE TIME PICKER 
+    *************************************
+    *************************************/
+
+.platform-dropdown{
+    margin-top: 5%;
+}
+
+/* Platform dropdown paper */
+.css-1poimk-MuiPaper-root-MuiMenu-paper-MuiPaper-root-MuiPopover-paper{
+    background-color: black !important;
+    color: white !important;
+    border: 1px solid gray !important;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
+    background-color: #F05742 !important;
+}
+
+/* Input border */
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline{
+    border-width: 1px !important;
 }

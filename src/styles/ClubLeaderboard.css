@@ -16,7 +16,6 @@
 
 #club-leaderboard-content{
     white-space: nowrap;
-    width: 50%;
 }
 
 #club-leaderboard-avatar{
@@ -24,7 +23,12 @@
 }
 
 #club-leaderboard-table{
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin-left: 20%;
+    margin-right: 20%;
 }
   
 .platform-icon{
@@ -38,4 +42,3 @@
   .platform-icon:hover{
     cursor: pointer;
   }
-  
