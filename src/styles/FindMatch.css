@@ -70,7 +70,7 @@
     justify-content: center;
 }
 
-.create-match-button{
+.standard-clubhub-button{
     margin-top: 2%;
     margin-bottom: 2%;
     font-family: "Poppins", "sans-serif";
@@ -79,7 +79,7 @@
     border-radius: 10px;
 }
 
-.create-match-button:hover{
+.standard-clubhub-button:hover{
     cursor: pointer;
     color: black;
     background-color: white;
@@ -257,4 +257,8 @@
 /* Input border */
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline{
     border-width: 1px !important;
+}
+
+.submit-cancel-buttons{
+    margin-top: 2%;
 }

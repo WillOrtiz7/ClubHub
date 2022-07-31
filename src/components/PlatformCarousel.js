@@ -125,24 +125,28 @@ function PlatformCarousel(props) {
       <div id="club-leaderboard-content">
         <div id="club-leaderboard-table">
           {createMatchOpen ? (
-            <CreateMatch />
+            <div>
+              <CreateMatch
+                createMatchOpen={createMatchOpen}
+                setCreateMatchOpen={setCreateMatchOpen}
+                findMatchPlatform={findMatchPlatform}
+              />
+            </div>
+          ) : root === "findMatch" && !createMatchOpen ? (
+            <div>
+              <StickyHeadTable platform={tableRender} root={root} />
+              <button
+                className="standard-clubhub-button"
+                onClick={() => setCreateMatchOpen(!createMatchOpen)}
+              >
+                Create match
+              </button>
+            </div>
           ) : (
             <StickyHeadTable platform={tableRender} root={root} />
           )}
         </div>
       </div>
-      {root === "findMatch" ? (
-        <div className="create-match-container">
-          <button
-            className="create-match-button"
-            onClick={() => setCreateMatchOpen(!createMatchOpen)}
-          >
-            Create match
-          </button>
-        </div>
-      ) : (
-        <div></div>
-      )}
     </div>
   );
 }
