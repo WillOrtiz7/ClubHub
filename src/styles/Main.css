@@ -10,16 +10,24 @@ body{
 #home{
     height: 100vh;
     height: fit-content;
+    text-align: center;
 }
 
 #club-leaderboard{
     height: 100vh;
     height: fit-content;
+    text-align: center;
 }
 
 #find-match{
     height: 100vh;
     height: fit-content;
+    text-align: center;
 }
+
+::selection{
+    background: #F05742
+}
+
 
 

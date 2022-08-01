@@ -1,0 +1,56 @@
+body{
+    background-color: black !important;
+}
+
+/* Sign up heading */
+.css-ag7rrr-MuiTypography-root{
+    color: rgb(255 255 255 / 90%) !important
+}
+
+/* Input field text */
+.css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input{
+    color: white !important;
+}
+
+/* Input field placeholder */
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root{
+    color: rgb(255 255 255 / 60%) !important;
+}
+
+/* Get emails text */
+.css-j204z7-MuiFormControlLabel-root .MuiFormControlLabel-label{
+    color: rgb(255 255 255 / 60%) !important;
+}
+/* Get emails checkbox */
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root{
+    color: #F05742 !important;
+}
+/* Sign up button */
+.css-1vhaqj4-MuiButtonBase-root-MuiButton-root{
+    background-color: #F05742 !important;
+}
+.css-1vhaqj4-MuiButtonBase-root-MuiButton-root:hover{
+    background-color: white !important;
+    color: #F05742 !important;
+}
+/* Already have an account text */
+.css-101ca9i-MuiTypography-root-MuiLink-root{
+    color: rgb(255 255 255 / 60%) !important;
+    border-bottom: 1px solid rgb(255 255 255 / 60%) !important;
+}
+.css-101ca9i-MuiTypography-root-MuiLink-root:hover{
+    color: #F05742 !important;
+    border-bottom: #F05742 !important;
+}
+
+.css-ijhegu-MuiTypography-root{
+    color:rgb(255 255 255 / 90%) !important;
+}
+
+.already-have-account{
+    color:rgb(255 255 255 / 60%);
+    font-size: 14px;
+}
+.already-have-account:hover{
+    color:#F05742;
+}

@@ -29,7 +29,7 @@ const theme = createTheme({
   },
 });
 
-export default function SignIn() {
+export default function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -57,7 +57,7 @@ export default function SignIn() {
         >
           <img src={ClubHubLogo} alt="clubhub-logo" height={60} width={60} />
           <Typography component="h1" variant="h5">
-            Sign In
+            Sign up
           </Typography>
           <Box
             component="form"
@@ -68,10 +68,21 @@ export default function SignIn() {
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <TextField
+                  autoComplete="given-name"
+                  name="firstName"
+                  required
+                  fullWidth
+                  id="firstName"
+                  label="Username"
+                  autoFocus
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
                   required
                   fullWidth
                   id="email"
-                  label="Username"
+                  label="Email Address"
                   name="email"
                   autoComplete="email"
                 />
@@ -87,6 +98,14 @@ export default function SignIn() {
                   autoComplete="new-password"
                 />
               </Grid>
+              <Grid item xs={12}>
+                <FormControlLabel
+                  control={
+                    <Checkbox value="allowExtraEmails" color="primary" />
+                  }
+                  label="I want to receive updates about ClubHub via email."
+                />
+              </Grid>
             </Grid>
             <Button
               type="submit"
@@ -94,17 +113,12 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Sign Up
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link to="/signup" className="already-have-account">
-                  Forgot password?
-                </Link>
-              </Grid>
+            <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link to="/signup" className="already-have-account">
-                  Don't have an account? Sign up
+                <Link to="/signin" className="already-have-account">
+                  Already have an account? Sign in
                 </Link>
               </Grid>
             </Grid>
