@@ -1,7 +1,7 @@
 #nav{
     height: 100%;
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
     background-color: black;
     align-items: center;
     justify-content: flex-end;
@@ -21,8 +21,16 @@
     cursor: pointer;
 }
 
-#nav-links > div:hover {
-    color:#F05742;
+.nav-link:hover{
+    color: #F05742 !important
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}
+a:hover{
+   color: #F05742;
 }
 
 

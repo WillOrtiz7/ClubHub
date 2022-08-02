@@ -12,6 +12,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import ClubHubLogo from "../assets/clubhub-logo.png";
 import "../styles/SignUp.css";
+import { useAuth } from "../contexts/AuthContext";
 
 function Copyright(props) {
   return (
