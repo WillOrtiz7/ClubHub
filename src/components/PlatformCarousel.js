@@ -78,7 +78,6 @@ function PlatformCarousel(props) {
   // Decide leaderboard to display when StickyHeadTable is called
   let tableRender =
     root === "leaderboard" ? leaderboardPlatform : findMatchPlatform;
-  console.log("Table render: ", tableRender);
 
   return (
     <div className="carousel-and-leaderboard">

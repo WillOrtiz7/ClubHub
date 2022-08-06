@@ -229,7 +229,6 @@ export default function StickyHeadTable(props) {
                     {columns.map((column) => {
                       const value = row[column.id];
                       if (value === "No opponent") {
-                        console.log("Join Match");
                       }
                       return (
                         <TableCell
