@@ -40,11 +40,32 @@ export default function SignUp() {
 
   const { createUser } = UserAuth();
 
+  function formValidator() {
+    if (username.length < 3) {
+      setError("Error (username must be at least 6 characters)");
+      return false;
+    } else if (password !== confirmPassword) {
+      setError("Error (passwords do not match)");
+      return false;
+    } else if (password.length < 6) {
+      setError("Error (password must be at least 6 characters)");
+      return false;
+    }
+    return true;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // Reset error message
     setError("");
+    // Run validation check on form input
+    if (!formValidator()) {
+      return;
+    }
+    // Create account on firebase and navigate to home page
     try {
-      await createUser(email, password);
+      await createUser(email, password, username);
+      navigate("/");
     } catch (e) {
       setError(e.message);
       console.log(e.message);
@@ -73,6 +94,9 @@ export default function SignUp() {
           <Typography component="h1" variant="h5">
             Sign up
           </Typography>
+          {error !== "" && (
+            <Typography sx={{ color: "red", fontSize: 12 }}>{error}</Typography>
+          )}
           <Box component="form" noValidate sx={{ mt: 3 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
