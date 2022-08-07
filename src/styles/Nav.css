@@ -13,6 +13,8 @@
     width: 50%;
     color: white;
     justify-content: flex-end;
+    align-items: center;
+    align-content: center;
 }
 
 #nav-links > div {

@@ -4,10 +4,19 @@ import "../styles/Nav.css";
 import { Link } from "react-router-dom";
 import { UserAuth } from "../contexts/AuthContext";
 import "../styles/Main.css";
+import ProfileDropdown from "./ProfileDropdown";
 
 function Nav() {
   const { user, logout } = UserAuth();
   console.log(user);
+
+  async function handleLogout() {
+    try {
+      await logout;
+    } catch (e) {
+      console.log(e.message);
+    }
+  }
   return (
     <div id="nav">
       <div id="nav-links">
@@ -23,15 +32,7 @@ function Nav() {
           <ScrollIntoView selector="#find-match">Find a match</ScrollIntoView>
         </div>
         {user ? (
-          <div>
-            {user.email}{" "}
-            <button
-              className="standard-clubhub-button"
-              onClick={() => logout()}
-            >
-              Sign out
-            </button>
-          </div>
+          <ProfileDropdown user={user} handleLogout={handleLogout} />
         ) : (
           <div className="nav-link">
             <Link to="/signin">Sign in</Link>

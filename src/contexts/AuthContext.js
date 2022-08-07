@@ -15,9 +15,12 @@ const UserContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState({});
   let usersCollection;
+  // Add a new user
   const createUser = (email, password, username) => {
+    // Add new user to authentication
     createUserWithEmailAndPassword(auth, email, password).then((response) => {
       usersCollection = doc(db, "users", response.user.uid);
+      // Add new user to database collection
       setDoc(usersCollection, { username: username })
         .then(() => {
           console.log("Document added");
@@ -36,6 +39,7 @@ export const AuthContextProvider = ({ children }) => {
     return signOut(auth);
   };
 
+  // Set the user when a new user logs in
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       console.log(currentUser);
@@ -53,6 +57,7 @@ export const AuthContextProvider = ({ children }) => {
   );
 };
 
+// Export all of the functions created in this file
 export const UserAuth = () => {
   return useContext(UserContext);
 };
