@@ -4,13 +4,30 @@ import "../styles/ProfileDropdown.css";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import { UserAuth } from "../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
-export default function ProfileDropdown(props) {
+export default function ProfileDropdown() {
+  const navigate = useNavigate();
+  const { logout } = UserAuth();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event) => {
+
+  function handleClick(event) {
     setAnchorEl(event.currentTarget);
-  };
+  }
+  async function handleLogout() {
+    try {
+      await logout();
+    } catch (e) {
+      console.log(e.message);
+    }
+  }
+  function handleEditProfile(event) {
+    setAnchorEl(event.currentTarget);
+    navigate("/editprofile");
+    handleClose();
+  }
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -41,9 +58,9 @@ export default function ProfileDropdown(props) {
           horizontal: "left",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem>Profile</MenuItem>
+        <MenuItem onClick={handleEditProfile}>My account</MenuItem>
+        <MenuItem onClick={handleLogout}>Logout</MenuItem>
       </Menu>
     </div>
   );

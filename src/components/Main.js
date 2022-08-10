@@ -8,17 +8,17 @@ import "../styles/Main.css";
 function Main() {
   return (
     <div id="main">
-      <div id="nav-container">
+      <div className="nav-container">
         <Nav />
       </div>
       <div id="main-content">
-        <div id="home">
+        <div id="home" className="standard-clubhub-page-container">
           <Home />
         </div>
-        <div id="club-leaderboard">
+        <div id="club-leaderboard" className="standard-clubhub-page-container">
           <ClubLeaderboard />
         </div>
-        <div id="find-match">
+        <div id="find-match" className="standard-clubhub-page-container">
           <FindMatch />
         </div>
       </div>

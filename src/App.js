@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import { AuthContextProvider } from "./contexts/AuthContext";
+import EditProfile from "./components/EditProfile";
 
 function App() {
   let mainContent = document.getElementById("main-content");
@@ -17,6 +18,7 @@ function App() {
           <Route exact path="/" element={<Main />} />
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/editprofile" element={<EditProfile />} />
         </Routes>
       </AuthContextProvider>
     </BrowserRouter>

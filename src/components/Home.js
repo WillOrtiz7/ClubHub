@@ -1,11 +1,12 @@
 import React from "react";
+import "../styles/Main.css";
 import "../styles/Home.css";
 import avatarHome from "../assets/avatar-home.png";
 
 function Home() {
   return (
-    <div id="home-body">
-      <h1 id="home-header">Home</h1>
+    <div className="standard-clubhub-page-body">
+      <h1 className="standard-clubhub-page-header">Home</h1>
       <div id="home-content">
         <h2 id="home-content-title">What is ClubHub?</h2>
         <p id="home-content-body">
