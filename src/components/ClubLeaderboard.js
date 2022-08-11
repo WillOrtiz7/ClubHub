@@ -13,7 +13,7 @@ function ClubLeaderboard() {
   };
   return (
     <div id="club-leaderboard-body">
-      <h1 id="club-leaderboard-header">Club Leaderboard</h1>
+      <h2 id="club-leaderboard-header">Club Leaderboard</h2>
       <div id="club-leaderboard-carousel-table">
         <PlatformCarousel details={clubLeaderboardProps} />
       </div>

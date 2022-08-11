@@ -6,9 +6,9 @@ import avatarHome from "../assets/avatar-home.png";
 function Home() {
   return (
     <div className="standard-clubhub-page-body">
-      <h1 className="standard-clubhub-page-header">Home</h1>
+      <h2 className="standard-clubhub-page-header">Home</h2>
       <div id="home-content">
-        <h2 id="home-content-title">What is ClubHub?</h2>
+        <h3 id="home-content-title">What is ClubHub?</h3>
         <p id="home-content-body">
           ClubHub is an application made for FIFA Pro Club players across all
           platforms. Our objective is to provide clubs with the resources to

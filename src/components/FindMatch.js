@@ -14,7 +14,7 @@ function FindMatch() {
   };
   return (
     <div id="find-match-body">
-      <h1 id="find-match-header">Find a Match</h1>
+      <h2 id="find-match-header">Find a Match</h2>
       <div id="find-match-carousel-table">
         <PlatformCarousel details={findMatchProps} />
       </div>
